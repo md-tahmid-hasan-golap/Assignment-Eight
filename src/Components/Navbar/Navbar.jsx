@@ -1,7 +1,9 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
+import { CiHome } from "react-icons/ci";
+import { FaAppStore, FaGithub } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 import { IoPrismSharp } from "react-icons/io5";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const links = (
@@ -13,6 +15,7 @@ const Navbar = () => {
             isActive ? "btn bg-blue-600 text-white mr-2" : "btn mr-2"
           }
         >
+          <CiHome size={20} />
           Home
         </NavLink>
       </li>
@@ -23,7 +26,7 @@ const Navbar = () => {
             isActive ? "btn bg-blue-600 text-white mr-2" : "btn mr-2"
           }
         >
-          Apps
+          <FaAppStore size={20} /> Apps
         </NavLink>
       </li>
       <li>
@@ -33,6 +36,7 @@ const Navbar = () => {
             isActive ? "btn bg-blue-600 text-white mr-2" : "btn mr-2"
           }
         >
+          <FiDownload size={20} />
           Installation
         </NavLink>
       </li>
@@ -66,15 +70,20 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-purple-600">
+        <Link to="/" className="btn btn-ghost text-xl text-purple-600">
           <IoPrismSharp size={30} /> HERO.IO
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white bg-gradient-to-r from-purple-600 to-blue-500 flex items-center gap-2">
+        <a
+          href="https://github.com/md-tahmid-hasan-golap"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn text-white bg-gradient-to-r from-purple-600 to-blue-500 flex items-center gap-2"
+        >
           <FaGithub size={25} /> Contribute
         </a>
       </div>
