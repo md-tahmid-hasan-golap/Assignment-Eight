@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../../assets/hero.png";
+import { FaAppStore, FaGooglePlay } from "react-icons/fa";
 
 const Banner = () => {
   return (
@@ -24,6 +25,7 @@ const Banner = () => {
           rel="noopener noreferrer"
           className="btn bg-white text-black border-[#e5e5e5] flex items-center gap-2"
         >
+          <FaGooglePlay className="text-purple-500" size={30} />
           Google Play
         </a>
         {/* App Store */}
@@ -33,6 +35,7 @@ const Banner = () => {
           rel="noopener noreferrer"
           className="btn bg-white text-black border-[#e5e5e5] flex items-center gap-2"
         >
+          <FaAppStore className="text-blue-500" size={30} />
           App Store
         </a>
       </div>
