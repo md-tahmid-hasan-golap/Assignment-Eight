@@ -13,7 +13,8 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home,
+        element: <Home></Home>,
+        loader: () => fetch("/trendingApp.json"),
       },
       {
         path: "/apps",
