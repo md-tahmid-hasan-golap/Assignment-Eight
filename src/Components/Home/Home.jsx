@@ -5,10 +5,11 @@ import { useLoaderData } from "react-router";
 
 const Home = () => {
   const trendingAppData = useLoaderData();
+
   return (
     <div>
-      <Banner></Banner>
-      <TrendingApps trendingAppData={trendingAppData}></TrendingApps>
+      <Banner />
+      <TrendingApps trendingAppData={trendingAppData} />
     </div>
   );
 };

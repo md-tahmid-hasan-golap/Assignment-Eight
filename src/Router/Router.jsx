@@ -9,27 +9,37 @@ import AppDetails from "../Components/AppDetails/AppDetails";
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage />,
     Component: MainLayouts,
     children: [
       {
         index: true,
-        element: <Home></Home>,
-        loader: () => fetch("/trendingApp.json"),
+        element: <Home />,
+        loader: () =>
+          // fake delay + local fetch
+          new Promise((resolve) =>
+            setTimeout(() => resolve(fetch("/trendingApp.json")), 800)
+          ),
       },
       {
         path: "/apps",
-        element: <Apps></Apps>,
-        loader: () => fetch("/ourAllApps.json"),
+        element: <Apps />,
+        loader: () =>
+          new Promise((resolve) =>
+            setTimeout(() => resolve(fetch("/ourAllApps.json")), 800)
+          ),
       },
       {
         path: "/appDetails/:id",
-        element: <AppDetails></AppDetails>,
+        element: <AppDetails />,
         loader: () => fetch("/ourAllApps.json"),
       },
       {
         path: "/installation",
-        Component: Installation,
+        element: <Installation />,
+        loader: () =>
+          // fake delay so loading spinner shows
+          new Promise((resolve) => setTimeout(() => resolve([]), 800)),
       },
     ],
   },
