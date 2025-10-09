@@ -5,10 +5,8 @@ import Footer from "../Components/Footer/Footer";
 import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
 
 const MainLayouts = () => {
-  // React Router এর বিল্ট-ইন হুক, রুট লোড হচ্ছে কিনা তা জানায়
   const navigation = useNavigation();
 
-  // যদি কোনো পেজ লোড হচ্ছে, তখন শুধু লোডার দেখাও
   if (navigation.state === "loading") {
     return <LoadingSpinner />;
   }
